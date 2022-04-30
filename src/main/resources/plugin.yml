@@ -1,0 +1,12 @@
+name: UHCRecipes
+author: STRlantian
+version: 1.0
+api-version: 1.18
+main: com.jmqstudio.strlantian.Main
+commands:
+  uhcrecipes:
+    description: "See UHC Recipes"
+    usage: /uhcrecipe
+  uhchelp:
+    description: "See Help Page"
+    usage: /uhchelp
