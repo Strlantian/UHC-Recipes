@@ -11,4 +11,4 @@ Believe or not it's my first plugin.
 It's still under development
 I opened this repository to find if there is some1 could offer me some advice or help
 Well thx for helping or supporting me if you want.
-Here's my donate page: https://afdian.net/@STRlantian
+Here's my donation page: https://afdian.net/@STRlantian
