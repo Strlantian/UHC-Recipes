@@ -1,18 +1,29 @@
 package com.jmqstudio.strlantian.Listeners;
 
+import com.jmqstudio.strlantian.Factory.CompassAssets;
+import com.jmqstudio.strlantian.Factory.Recipes;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.player.PlayerItemHeldEvent;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.Recipe;
+import org.bukkit.inventory.meta.CompassMeta;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+
+import java.util.Objects;
+import java.util.UUID;
 
 import static com.jmqstudio.strlantian.Factory.Items.and;
 import static com.jmqstudio.strlantian.Factory.Items.stick;
@@ -21,7 +32,7 @@ import static com.jmqstudio.strlantian.Factory.Recipes.*;
 public final class ItemEffects implements Listener
 {
     @EventHandler
-    public void retItems(CraftItemEvent e)
+    public void returnItems(CraftItemEvent e)
     {
         CommandSender cs = Bukkit.getConsoleSender();
         Recipe rc = e.getRecipe();
@@ -48,7 +59,7 @@ public final class ItemEffects implements Listener
     }
 
     @EventHandler
-    public void hldItem(PlayerItemHeldEvent e)
+    public void holdItem(PlayerItemHeldEvent e)
     {
         Player pl = e.getPlayer();
         ItemStack mItem = pl.getEquipment().getItemInMainHand();
@@ -60,9 +71,36 @@ public final class ItemEffects implements Listener
             pl.addPotionEffect(spd1);
             pl.addPotionEffect(res1);
         }
-        while(mItem.equals(stick))
+    }
+
+    @EventHandler
+    public void craftItem(CraftItemEvent e)
+    {
+        Player target = Bukkit.getPlayer("");
+        Player user = (Player) e.getWhoClicked();
+        while(Objects.equals(target, user))
         {
-            pl.addPotionEffect(spd1);
+            target = Bukkit.getPlayer("");
+            if(!Objects.equals(target, user))
+            {
+                break;
+            }
+        }
+        CompassAssets.registerTarget(target);
+        Recipe recipe = e.getRecipe();
+        Location loc = CompassAssets.getTargetLocation(user);
+        if(recipe.equals(htrc))
+        {
+            ItemStack compass = recipe.getResult();
+            CompassMeta im = (CompassMeta) compass.getItemMeta();
+            while(!user.isDead() && !target.isDead() && target.isOnline())
+            {
+                im.setLodestone(loc);
+                if(!user.isDead() || !target.isDead())
+                {
+                    break;
+                }
+            }
         }
     }
 }

@@ -1,8 +1,11 @@
 package com.jmqstudio.strlantian.Factory;
 
 import org.bukkit.*;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.*;
@@ -11,6 +14,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.potion.PotionType;
 
+import javax.annotation.Nonnull;
 import java.util.Arrays;
 import java.util.UUID;
 
@@ -477,7 +481,7 @@ public final class Items
 
         ItemMeta vidim = vid.getItemMeta();
         vidim.setDisplayName("§6Shoes of Vider | 维达战靴");
-        vidim.setLore(Arrays.asList("","§9But who is Vider first? (From a Chinese author","","§cNo Anvils",""));
+        vidim.setLore(Arrays.asList("","§cNo Anvils",""));
         vidim.addEnchant(Enchantment.DEPTH_STRIDER, 2, true);
         vidim.addEnchant(Enchantment.DURABILITY, 3 ,true);
         vidim.addEnchant(Enchantment.PROTECTION_PROJECTILE, 2, true);
@@ -497,23 +501,27 @@ public final class Items
         val.setItemMeta(valim);
 
         ItemMeta blsim = bls.getItemMeta();
+        assert blsim != null;
         blsim.setDisplayName("§6Miner's Blessing | 矿神的祝福");
         blsim.setLore(Arrays.asList("","§9Gain eff & sharp1 after breaking 100 blocks","§9     eff & sharp2 after breaking 300 blocks","§9    eff & sharp3 after breaking 600 blocks","§9    eff & sharp3 after breaking 1000 blocks","§9     eff & sharp4 after breaking 1400 blocks","§9     eff & sharp5 after breaking 1700 blocks","§9Get Haste1 while holding","Every 100 broken gives Regen1 for 5sec","§9Recipe Changed","","§cNo Anvils",""));
         bls.setItemMeta(blsim);
 
         ItemMeta ambim = amb.getItemMeta();
+        assert ambim != null;
         ambim.addEnchant(Enchantment.ARROW_DAMAGE, 3, true);
         ambim.setDisplayName("§6Ambrosia | 仙馔密酒");
         ambim.setLore(Arrays.asList("","§9Make any potion to level 3 and reduce 20% of the duration",""));
         amb.setItemMeta(ambim);
 
         ItemMeta lusim = lus.getItemMeta();
+        assert lusim != null;
         lusim.setDisplayName("§6BloodLust | 夺魂剑");
         lusim.setLore(Arrays.asList("","§9Gain sharp2 on 10 kills","§9     sharp3 on 30 kills","§9     sharp4 on 60 kills","§9     sharp5 on 100 kills","","'Kill' Means Slaining Any Entities",""));
         lusim.addEnchant(Enchantment.DAMAGE_ALL, 1, true);
         lus.setItemMeta(lusim);
 
         ItemMeta allim = all.getItemMeta();
+        assert allim != null;
         allim.setDisplayName("§6ComBow | 全能弓");
         allim.setLore(Arrays.asList("","§9小孩子才做选择，我全都要","§9Only children make choices, I will take all","§9(Actually Main.inst is because im lazy)","§9Will give your target a lightning for 1 heart","","§cReplaced ModularBow in Hypixel",""));
         allim.addEnchant(Enchantment.ARROW_KNOCKBACK, 1, true);
@@ -521,11 +529,13 @@ public final class Items
         all.setItemMeta(allim);
 
         ItemMeta epsim = eps.getItemMeta();
+        assert epsim != null;
         epsim.setDisplayName("§6Expert Seal | 大师密卷");
         epsim.setLore(Arrays.asList("","§9这不是黄冈密卷和五三密卷","§9Every item's every ench level will raise by 1","§9Recipe Changed(Hardest one)",""));
         eps.setItemMeta(epsim);
 
         ItemMeta spdim = spd.getItemMeta();
+        assert spdim != null;
         spdim.setDisplayName("§6Hermes' Boots | 赫尔墨斯飞靴");
         spdim.setLore(Arrays.asList("","§9Can't stooooooooooop","§9出现了,炫迈代言人!","§9Get Speed3 while wearing","§9Recipe Changed",""));
         spdim.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 2, true);
@@ -534,6 +544,7 @@ public final class Items
         spd.setItemMeta(spdim);
 
         ItemMeta rageim = rage.getItemMeta();
+        assert rageim != null;
         rageim.setDisplayName("§6Barbarian Chestplate | 愤怒胸甲");
         rageim.setLore(Arrays.asList("","§9Get Resistance1 and Strength1 while wearing",""));
         rageim.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
@@ -548,22 +559,32 @@ public final class Items
         CompassMeta htim = (CompassMeta) ht.getItemMeta();
         assert htim != null;
         htim.setDisplayName("§aHunter's Compass | 猎人罗盘");
-        htim.setLore(Arrays.asList("","§9Sounds fimilar huh?","§9Point to a random player","","§cCustom",""));
+        htim.setLore(Arrays.asList("","§9Sounds fimilar?","§9Point to a random player","","§cCustom",""));
         htim.addEnchant(Enchantment.DURABILITY, 1, true);
-        //
-        Player radpl = Bukkit.getPlayer("");
-        assert radpl != null;
-        while(!radpl.isDead())
-        {
-            Location loc = radpl.getLocation();
-            htim.setLodestone(loc);
-        }
+        htim.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         //测试内容
         ItemMeta stickim = stick.getItemMeta();
+        AttributeModifier spdMain = new AttributeModifier(UUID.randomUUID(), "SpeedUpMain", 1.5, AttributeModifier.Operation.ADD_SCALAR, EquipmentSlot.HAND);
+        AttributeModifier spdOff = new AttributeModifier(UUID.randomUUID(), "SpeedUpOff", 1.5, AttributeModifier.Operation.ADD_SCALAR, EquipmentSlot.OFF_HAND);
         assert stickim != null;
         stickim.setDisplayName("§aAlpenstock | 登山杖");
+        stickim.addAttributeModifier(Attribute.GENERIC_MOVEMENT_SPEED, spdMain);
+        stickim.addAttributeModifier(Attribute.GENERIC_MOVEMENT_SPEED, spdOff);
         stickim.setLore(Arrays.asList("","§9Provide speed1 when holding","","§cFeature By JoeMichaelQiao",""));
         stickim.addEnchant(Enchantment.DURABILITY, 1, true);
+        stickim.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         stick.setItemMeta(stickim);
+    }
+    public static ItemStack makeHead(@Nonnull Player who, @Nonnull Player killer)
+    {
+        ItemStack head = new ItemStack(Material.PLAYER_HEAD);
+        SkullMeta im = (SkullMeta) head.getItemMeta();
+        String name = who.getName();
+        String kname = killer.getName();
+        im.setOwnerProfile(who.getPlayerProfile());
+        im.setDisplayName(ChatColor.YELLOW + name + "的头颅");
+        im.setLore(Arrays.asList("", ChatColor.GREEN + "击杀者: " + kname));
+        head.setItemMeta(im);
+        return head;
     }
 }
