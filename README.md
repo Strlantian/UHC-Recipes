@@ -21,6 +21,6 @@ in order not to make "NoSuchMethod" exception occur ~~(which just like wt*)~~
 and then report me bugs and feedbacks. I'm gonna say thx for people doing this.
 
 Well thx for helping or supporting me if you want.
-Here's my donation page: https://afdian.net/@STRlantian||
+Here's my donation page: https://afdian.net/@STRlantian
 
 ~~Maybe it's the worst plugin in Github lol.~~
