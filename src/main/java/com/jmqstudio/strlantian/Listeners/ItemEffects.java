@@ -1,32 +1,25 @@
 package com.jmqstudio.strlantian.Listeners;
 
 import com.jmqstudio.strlantian.Factory.CompassAssets;
-import com.jmqstudio.strlantian.Factory.Recipes;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.player.PlayerItemHeldEvent;
-import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.meta.CompassMeta;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import java.util.Objects;
-import java.util.UUID;
 
 import static com.jmqstudio.strlantian.Factory.Items.and;
-import static com.jmqstudio.strlantian.Factory.Items.stick;
 import static com.jmqstudio.strlantian.Factory.Recipes.*;
 
 public final class ItemEffects implements Listener
