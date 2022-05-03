@@ -4,7 +4,7 @@
 __*Introduction*__
 - Recipes mainly from Hypixel UHC
 - In order to be capable for survival, I changed some recipes
-- It's only language is CN since I haven't been finish the content of the plugin, so maybe I will do the localise someday.
+- Its only language is CN since I haven't been finish the content of the plugin, so maybe I will do the localisation someday.
 
 __*Author List*__
 - STRlantian: Main Programmer ~~(im a noob lol)~~
