@@ -6,7 +6,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>UHCRecipesRewrite</artifactId>
-    <version>Spi-alp1.7</version>
+    <version>Spi-alp1.8</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

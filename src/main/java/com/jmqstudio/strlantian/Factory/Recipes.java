@@ -384,51 +384,43 @@ public final class Recipes
         fsrc.addIngredient(new RecipeChoice.MaterialChoice(Material.DIAMOND_CHESTPLATE, Material.DIAMOND_LEGGINGS, Material.DIAMOND_BOOTS, Material.DIAMOND_HELMET));
         fsrc.addIngredient(new RecipeChoice.MaterialChoice(Material.DIAMOND_CHESTPLATE, Material.DIAMOND_LEGGINGS, Material.DIAMOND_BOOTS, Material.DIAMOND_HELMET));
         fsrc.addIngredient(new RecipeChoice.MaterialChoice(Material.DIAMOND_CHESTPLATE, Material.DIAMOND_LEGGINGS, Material.DIAMOND_BOOTS, Material.DIAMOND_HELMET));
-        Bukkit.addRecipe(fsrc);
 
         shearrc.shape("aaa", "aba", "aaa");
         shearrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.ACACIA_LEAVES, Material.AZALEA_LEAVES, Material.BIRCH_LEAVES, Material.OAK_LEAVES, Material.DARK_OAK_LEAVES, Material.ACACIA_LEAVES, Material.SPRUCE_LEAVES, Material.JUNGLE_LEAVES, Material.BROWN_MUSHROOM_BLOCK, Material.RED_MUSHROOM_BLOCK, Material.WARPED_WART_BLOCK, Material.NETHER_WART_BLOCK));
         shearrc.setIngredient('b', Material.SHEARS);
-        Bukkit.addRecipe(shearrc);
 
         deprc.shape("  a", " ab", "a b");
         deprc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.BONE, Material.BONE_BLOCK));
         deprc.setIngredient('b', Material.STRING);
-        Bukkit.addRecipe(deprc);
 
         frsrc.shape("ab ", "bcc", " cd");
         frsrc.setIngredient('a', Material.FLINT_AND_STEEL);
         frsrc.setIngredient('b', Material.BLAZE_POWDER);
         frsrc.setIngredient('c', Material.PAPER);
         frsrc.setIngredient('d', Material.LAVA_BUCKET);
-        Bukkit.addRecipe(frsrc);
 
         caBorc.shape("aaa", "aca", "aba");
         caBorc.setIngredient('a', Material.TNT);
         caBorc.setIngredient('c', Material.DIAMOND_BOOTS);
         caBorc.setIngredient('b', Material.WATER_BUCKET);
-        Bukkit.addRecipe(caBorc);
 
         atmrc.shape("aba", "aca", "ada");
         atmrc.setIngredient('a', Material.FEATHER);
         atmrc.setIngredient('b', Material.DIAMOND);
         atmrc.setIngredient('c', Material.BOW);
         atmrc.setIngredient('d', Material.ENDER_EYE);
-        Bukkit.addRecipe(atmrc);
 
         harmrc.shape(" a ", "bcb", " d ");
         harmrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.PLAYER_HEAD, Material.WITHER_SKELETON_SKULL));
         harmrc.setIngredient('b', new RecipeChoice.MaterialChoice(Material.BROWN_MUSHROOM, Material.RED_MUSHROOM));
         harmrc.setIngredient('c', Material.GLASS_BOTTLE);
         harmrc.setIngredient('d', Material.INK_SAC);
-        Bukkit.addRecipe(harmrc);
 
         exurc.shape("aaa", "aba", "cdc");
         exurc.setIngredient('a', Material.DIAMOND);
         exurc.setIngredient('b', new RecipeChoice.MaterialChoice(Material.PLAYER_HEAD, Material.WITHER_SKELETON_SKULL));
         exurc.setIngredient('c', Material.EMERALD);
         exurc.setIngredient('d', Material.GOLDEN_CARROT);
-        Bukkit.addRecipe(exurc);
 
         legrc.shape("aba", "cdc", "e e");
         legrc.setIngredient('a', Material.LAPIS_BLOCK);
@@ -436,7 +428,6 @@ public final class Recipes
         legrc.setIngredient('c', Material.DIAMOND);
         legrc.setIngredient('d', Material.DIAMOND_LEGGINGS);
         legrc.setIngredient('e', Material.LILY_PAD);
-        Bukkit.addRecipe(legrc);
 
         fateBrc.shape(" a ", "bcd", "eee");
         fateBrc.setIngredient('a', Material.MAGMA_CREAM);
@@ -444,7 +435,6 @@ public final class Recipes
         fateBrc.setIngredient('c', Material.WRITABLE_BOOK);
         fateBrc.setIngredient('d', Material.BOW);
         fateBrc.setIngredient('e', Material.EXPERIENCE_BOTTLE);
-        Bukkit.addRecipe(fateBrc);
 
         drAxerc.shape("abc", "def", "ghi");
         drAxerc.setIngredient('a', Material.TNT);
@@ -456,36 +446,30 @@ public final class Recipes
         drAxerc.setIngredient('g', Material.FIREWORK_ROCKET);
         drAxerc.setIngredient('h', new RecipeChoice.MaterialChoice(Material.PLAYER_HEAD, Material.WITHER_SKELETON_SKULL));
         drAxerc.setIngredient('i', Material.FISHING_ROD);
-        Bukkit.addRecipe(drAxerc);
 
         exrc.shape("aba", "aca", "ada");
         exrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.SOUL_SAND, Material.SOUL_SOIL));
         exrc.setIngredient('b', Material.FIRE_CHARGE);
         exrc.setIngredient('c', Material.FIRE_CHARGE);
         exrc.setIngredient('d', Material.DIAMOND_SWORD);
-        Bukkit.addRecipe(exrc);
 
         andrc.shape("aba", "aba", "aca");
         andrc.setIngredient('a', Material.FEATHER);
         andrc.setIngredient('b', Material.IRON_BLOCK);
         andrc.setIngredient('c', Material.BLAZE_ROD);
-        Bukkit.addRecipe(andrc);
 
         scyrc.shape(" aa", " bc", "b  ");
         scyrc.setIngredient('a', Material.HAY_BLOCK);
         scyrc.setIngredient('b', new RecipeChoice.MaterialChoice(Material.BONE, Material.BONE_BLOCK));
         scyrc.setIngredient('c', Material.WATER_BUCKET);
-        Bukkit.addRecipe(scyrc);
 
         faterc.shape("aaa", "aba", "aaa");
         faterc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.OAK_PLANKS, Material.BIRCH_PLANKS, Material.ACACIA_PLANKS, Material.DARK_OAK_PLANKS, Material.CRIMSON_PLANKS, Material.JUNGLE_PLANKS, Material.SPRUCE_PLANKS, Material.WARPED_PLANKS));
         faterc.setIngredient('b', new RecipeChoice.MaterialChoice(Material.WITHER_SKELETON_SKULL, Material.PLAYER_HEAD));
-        Bukkit.addRecipe(faterc);
 
         hornrc.shape("aaa", "aba", "aaa");
         hornrc.setIngredient('a', Material.CARROT);
         hornrc.setIngredient('b', Material.GOLDEN_APPLE);
-        Bukkit.addRecipe(hornrc);
 
         essrc.shape("aba", "cdc", "aea");
         essrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.ACACIA_LEAVES, Material.AZALEA_LEAVES, Material.BIRCH_LEAVES, Material.OAK_LEAVES, Material.DARK_OAK_LEAVES, Material.ACACIA_LEAVES, Material.SPRUCE_LEAVES, Material.JUNGLE_LEAVES, Material.BROWN_MUSHROOM_BLOCK, Material.RED_MUSHROOM_BLOCK, Material.WARPED_WART_BLOCK, Material.NETHER_WART_BLOCK));
@@ -493,42 +477,35 @@ public final class Recipes
         essrc.setIngredient('c', Material.GLOWSTONE);
         essrc.setIngredient('d', Material.GLASS_BOTTLE);
         essrc.setIngredient('e', Material.REDSTONE_BLOCK);
-        Bukkit.addRecipe(essrc);
 
         extrc.addIngredient(new RecipeChoice.MaterialChoice(Material.WITHER_SKELETON_SKULL, Material.PLAYER_HEAD));
         extrc.addIngredient(Material.EMERALD);
         extrc.addIngredient(Material.GLASS_BOTTLE);
-        Bukkit.addRecipe(extrc);
 
         vBoxrc.shape("aba", "bcb", "aba");
         vBoxrc.setIngredient('a', Material.OBSIDIAN);
         vBoxrc.setIngredient('b', Material.GLASS);
         vBoxrc.setIngredient('c', new RecipeChoice.MaterialChoice(Material.WITHER_SKELETON_SKULL, Material.PLAYER_HEAD));
-        Bukkit.addRecipe(vBoxrc);
 
         dicerc.shape("aba", "aca", "aaa");
         dicerc.setIngredient('a', Material.MOSSY_COBBLESTONE);
         dicerc.setIngredient('b', new RecipeChoice.MaterialChoice(Material.WITHER_SKELETON_SKULL, Material.PLAYER_HEAD));
         dicerc.setIngredient('c', Material.JUKEBOX);
-        Bukkit.addRecipe(dicerc);
 
         rodrc.shape(" a ", "bcb", " d ");
         rodrc.setIngredient('a', Material.FISHING_ROD);
         rodrc.setIngredient('b', Material.LILY_PAD);
         rodrc.setIngredient('c', Material.COMPASS);
         rodrc.setIngredient('d', Material.WATER_BUCKET);
-        Bukkit.addRecipe(rodrc);
 
         skerc.shape("ab ", "ccc", "c c");
         skerc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.WITHER_SKELETON_SKULL, Material.PLAYER_HEAD));
         skerc.setIngredient('b', Material.SADDLE);
         skerc.setIngredient('c', new RecipeChoice.MaterialChoice(Material.BONE, Material.BONE_BLOCK));
-        Bukkit.addRecipe(skerc);
 
         flarc.addIngredient(new RecipeChoice.MaterialChoice(Material.MUSIC_DISC_13, Material.MUSIC_DISC_11, Material.MUSIC_DISC_CAT, Material.MUSIC_DISC_BLOCKS, Material.MUSIC_DISC_CHIRP, Material.MUSIC_DISC_FAR, Material.MUSIC_DISC_MALL, Material.MUSIC_DISC_MELLOHI, Material.MUSIC_DISC_PIGSTEP, Material.MUSIC_DISC_STAL, Material.MUSIC_DISC_STRAD, Material.MUSIC_DISC_WAIT, Material.MUSIC_DISC_WARD));
         flarc.addIngredient(Material.MILK_BUCKET);
         flarc.addIngredient(Material.GLASS_BOTTLE);
-        Bukkit.addRecipe(flarc);
 
         vidrc.shape(" a ", "bcb", " d ");
         vidrc.setIngredient('a', Material.PUFFERFISH);
@@ -540,33 +517,28 @@ public final class Recipes
         vidrc.setIngredient('b', new RecipeChoice.ExactChoice(w));
         vidrc.setIngredient('c', Material.DIAMOND_BOOTS);
         vidrc.setIngredient('d', Material.FISHING_ROD);
-        Bukkit.addRecipe(vidrc);
 
         valrc.addIngredient(new RecipeChoice.MaterialChoice(Material.WITHER_SKELETON_SKULL, Material.SKELETON_SKULL));
         valrc.addIngredient(Material.NETHER_WART);
         valrc.addIngredient(Material.GLASS_BOTTLE);
-        Bukkit.addRecipe(valrc);
 
         blsrc.shape("aba", "aca", "ddd");
         blsrc.setIngredient('a', Material.EXPERIENCE_BOTTLE);
         blsrc.setIngredient('b', Material.DIAMOND_SWORD);
         blsrc.setIngredient('c', Material.DIAMOND_PICKAXE);
         blsrc.setIngredient('d', Material.BOOKSHELF);
-        Bukkit.addRecipe(blsrc);
 
         ambrc.shape("aba", "cdc", "ccc");
         ambrc.setIngredient('a', Material.BLAZE_POWDER);
         ambrc.setIngredient('b', new RecipeChoice.MaterialChoice(Material.WITHER_SKELETON_SKULL, Material.SKELETON_SKULL));
         ambrc.setIngredient('c', Material.GLOWSTONE);
         ambrc.setIngredient('d', Material.GHAST_TEAR);
-        Bukkit.addRecipe(ambrc);
 
         lusrc.shape("aba", "aca", "ada");
         lusrc.setIngredient('a', Material.REDSTONE_BLOCK);
         lusrc.setIngredient('b', Material.DIAMOND);
         lusrc.setIngredient('c', Material.DIAMOND_SWORD);
         lusrc.setIngredient('d', Material.EXPERIENCE_BOTTLE);
-        Bukkit.addRecipe(lusrc);
 
         ShapedRecipe allrc = new ShapedRecipe(new NamespacedKey(Main.inst, "ComBow"), all);
         allrc.shape(" a ", "bcb", "ded");
@@ -575,14 +547,12 @@ public final class Recipes
         allrc.setIngredient('c', Material.BOW);
         allrc.setIngredient('d', Material.SPIDER_EYE);
         allrc.setIngredient('e', Material.SLIME_BALL);
-        Bukkit.addRecipe(allrc);
 
         epsrc.shape("aba", "cdc", "aba");
         epsrc.setIngredient('a', Material.IRON_BLOCK);
         epsrc.setIngredient('b', Material.GOLD_BLOCK);
         epsrc.setIngredient('c', Material.DIAMOND_BLOCK);
         epsrc.setIngredient('d', Material.NETHERITE_INGOT);
-        Bukkit.addRecipe(epsrc);
 
         spdrc.shape("aba", "cdc", "e e");
         spdrc.setIngredient('a', Material.DIAMOND);
@@ -590,7 +560,6 @@ public final class Recipes
         spdrc.setIngredient('c', Material.BLAZE_POWDER);
         spdrc.setIngredient('d', Material.DIAMOND_BOOTS);
         spdrc.setIngredient('e', Material.FEATHER);
-        Bukkit.addRecipe(spdrc);
 
         ragerc.shape("   ", "aba", "cdc");
         ragerc.setIngredient('a', Material.BLAZE_ROD);
@@ -602,37 +571,118 @@ public final class Recipes
         sim.setBasePotionData(new PotionData(PotionType.STRENGTH));
         s.setItemMeta(sim);
         ragerc.setIngredient('d', new RecipeChoice.ExactChoice(s));
-        Bukkit.addRecipe(ragerc);
 
         ftrc.shape(" a ", "aba", " a ");
         ftrc.setIngredient('a', Material.REDSTONE_LAMP);
         ftrc.setIngredient('b', Material.FLOWER_POT);
-        Bukkit.addRecipe(ftrc);
 
         flintrc.addIngredient(Material.GRAVEL);
         flintrc.addIngredient(Material.GRAVEL);
         flintrc.addIngredient(Material.GRAVEL);
-        Bukkit.addRecipe(flintrc);
 
         cpkrc.shape("aaa", "aba", "aaa");
         cpkrc.setIngredient('b', Material.COAL);
         cpkrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.COPPER_INGOT, Material.COPPER_ORE));
-        Bukkit.addRecipe(cpkrc);
 
         egApplerc.shape("aaa", "aba", "aaa");
         egApplerc.setIngredient('a', Material.GOLD_BLOCK);
         egApplerc.setIngredient('b', Material.APPLE);
-        Bukkit.addRecipe(egApplerc);
 
         htrc.shape(" a ", "bcb", " a ");
         htrc.setIngredient('a', Material.BLAZE_POWDER);
         htrc.setIngredient('b', Material.REDSTONE_BLOCK);
         htrc.setIngredient('c', Material.COMPASS);
-        Bukkit.addRecipe(htrc);
 
         stickrc.shape(" aa", "bba", "  a");
         stickrc.setIngredient('a', Material.IRON_INGOT);
         stickrc.setIngredient('b', Material.STICK);
+    }
+
+    public static void registerRecipes()
+    {
+        Bukkit.addRecipe(leapkrc);
+        Bukkit.addRecipe(appHelrc);
+        Bukkit.addRecipe(appSworc);
+        Bukkit.addRecipe(appBowrc);
+        Bukkit.addRecipe(appShieldrc);
+        Bukkit.addRecipe(vpSworc);
+        Bukkit.addRecipe(sharpBrc);
+        Bukkit.addRecipe(powBrc);
+        Bukkit.addRecipe(dragSworc);
+        Bukkit.addRecipe(projBrc);
+        Bukkit.addRecipe(protBrc);
+        Bukkit.addRecipe(dragCherc);
+        Bukkit.addRecipe(dustrc);
+        Bukkit.addRecipe(wartrc);
+        Bukkit.addRecipe(necrc);
+        Bukkit.addRecipe(netArtrc);
+        Bukkit.addRecipe(steakrc);
+        Bukkit.addRecipe(tourc);
+        Bukkit.addRecipe(spkCherc);
+        Bukkit.addRecipe(sevBotrc);
+        Bukkit.addRecipe(ipkrc);
+        Bukkit.addRecipe(obsrc);
+        Bukkit.addRecipe(tarnrc);
+        Bukkit.addRecipe(fortPicrc);
+        Bukkit.addRecipe(exprc);
+        Bukkit.addRecipe(ltAnvrc);
+        Bukkit.addRecipe(ltEncrc);
+        Bukkit.addRecipe(thoBrc);
+        Bukkit.addRecipe(wisArc);
+        Bukkit.addRecipe(melonrc);
+        Bukkit.addRecipe(aspPtrc);
+        Bukkit.addRecipe(gApplerc);
+        Bukkit.addRecipe(hdrc);
+        Bukkit.addRecipe(pBoxrc);
+        Bukkit.addRecipe(panPrc);
+        Bukkit.addRecipe(cBowrc);
+        Bukkit.addRecipe(arrowrc);
+        Bukkit.addRecipe(sadrc);
+        Bukkit.addRecipe(velPtrc);
+        Bukkit.addRecipe(ferrc);
+        Bukkit.addRecipe(forgerc);
+        Bukkit.addRecipe(qkPicrc);
+        Bukkit.addRecipe(lumrc);
+        Bukkit.addRecipe(eBookrc);
+        Bukkit.addRecipe(gpkrc);
+        Bukkit.addRecipe(sugrc);
+        Bukkit.addRecipe(chestrc);
+        Bukkit.addRecipe(fsrc);
+        Bukkit.addRecipe(shearrc);
+        Bukkit.addRecipe(deprc);
+        Bukkit.addRecipe(frsrc);
+        Bukkit.addRecipe(caBorc);
+        Bukkit.addRecipe(atmrc);
+        Bukkit.addRecipe(harmrc);
+        Bukkit.addRecipe(exurc);
+        Bukkit.addRecipe(legrc);
+        Bukkit.addRecipe(fateBrc);
+        Bukkit.addRecipe(drAxerc);
+        Bukkit.addRecipe(exrc);
+        Bukkit.addRecipe(andrc);
+        Bukkit.addRecipe(scyrc);
+        Bukkit.addRecipe(faterc);
+        Bukkit.addRecipe(hornrc);
+        Bukkit.addRecipe(essrc);
+        Bukkit.addRecipe(extrc);
+        Bukkit.addRecipe(dicerc);
+        Bukkit.addRecipe(vBoxrc);
+        Bukkit.addRecipe(rodrc);
+        Bukkit.addRecipe(skerc);
+        Bukkit.addRecipe(flarc);
+        Bukkit.addRecipe(vidrc);
+        Bukkit.addRecipe(valrc);
+        Bukkit.addRecipe(blsrc);
+        Bukkit.addRecipe(ambrc);
+        Bukkit.addRecipe(lusrc);
+        Bukkit.addRecipe(epsrc);
+        Bukkit.addRecipe(spdrc);
+        Bukkit.addRecipe(ragerc);
+        Bukkit.addRecipe(ftrc);
+        Bukkit.addRecipe(flintrc);
+        Bukkit.addRecipe(cpkrc);
+        Bukkit.addRecipe(egApplerc);
+        Bukkit.addRecipe(htrc);
         Bukkit.addRecipe(stickrc);
     }
 }
