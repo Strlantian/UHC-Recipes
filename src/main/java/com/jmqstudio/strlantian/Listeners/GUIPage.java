@@ -17,7 +17,7 @@ public final class GUIPage implements Listener
         Player pl = (Player) e.getWhoClicked();
         InventoryView inv = pl.getOpenInventory();
         String title = inv.getTitle();
-        if(title.equals(rcp))
+        if(title.contains(rcp))
         {
             e.setCancelled(true);
         }
@@ -30,26 +30,11 @@ public final class GUIPage implements Listener
             int slot = e.getSlot();
             switch(slot)
             {
-                case 46 ->
-                        {
-                            pl.openInventory(pg1);
-                        }
-                case 47 ->
-                        {
-                            pl.openInventory(pg2);
-                        }
-                case 49 ->
-                        {
-                            pl.closeInventory();
-                        }
-                case 51 ->
-                        {
-                            pl.openInventory(pg3);
-                        }
-                case 52 ->
-                        {
-                            pl.openInventory(pg4);
-                        }
+                case 46 -> pl.openInventory(pg1);
+                case 47 -> pl.openInventory(pg2);
+                case 49 -> pl.closeInventory();
+                case 51 -> pl.openInventory(pg3);
+                case 52 -> pl.openInventory(pg4);
             }
         }
     }

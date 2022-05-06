@@ -2,7 +2,6 @@ package com.jmqstudio.strlantian;
 
 import com.jmqstudio.strlantian.Commands.HelpPage;
 import com.jmqstudio.strlantian.Commands.OpenGUI;
-import com.jmqstudio.strlantian.Factory.Recipes;
 import com.jmqstudio.strlantian.Listeners.AboutPlayers;
 import com.jmqstudio.strlantian.Listeners.GUIPage;
 import com.jmqstudio.strlantian.Listeners.ItemEffects;
@@ -13,17 +12,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
 
-import static com.jmqstudio.strlantian.Factory.Recipes.*;
-
 public final class Main extends JavaPlugin
 {
     public static JavaPlugin inst;
-
     @Override
     public void onEnable()
     {
         inst = this;
-
         getLogger().info(ChatColor.GREEN + "UHCRecipes is enabled");
         getLogger().info(ChatColor.GREEN + "Use /uhcrecipes to check UHC recipes");
 
@@ -33,7 +28,6 @@ public final class Main extends JavaPlugin
         Bukkit.getPluginManager().registerEvents(new RecipePage(),this);
         Objects.requireNonNull(Bukkit.getPluginCommand("uhcrecipes")).setExecutor(new OpenGUI());
         Objects.requireNonNull(Bukkit.getPluginCommand("uhchelp")).setExecutor(new HelpPage());
-        Recipes.registerRecipes();
     }
 
     @Override

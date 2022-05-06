@@ -1,9 +1,7 @@
 package com.jmqstudio.strlantian.Factory;
 
-import com.jmqstudio.strlantian.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
@@ -11,8 +9,40 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public final class Ref
 {
-    public static FileConfiguration cfg = Main.inst.getConfig();
-
+    /*
+     *  What's the Number (Legacy)
+     *  ================
+     *  | 12 | 13 | 14 |
+     *  |--------------|
+     *  | 21 | 22 | 23 | ====>> result(created)
+     *  |--------------|
+     *  | 30 | 31 | 32 |
+     *  ================
+     */
+    public static final ItemStack IRON = new ItemStack(Material.IRON_INGOT);
+    public static final ItemStack TORCH = new ItemStack(Material.REDSTONE_TORCH);
+    public static final ItemStack RBLOCK = new ItemStack(Material.REDSTONE_BLOCK);
+    public static final ItemStack STR = new ItemStack(Material.STRING);
+    public static final ItemStack PLKS = new ItemStack(Material.OAK_PLANKS);
+    static
+    {
+        ItemMeta im = PLKS.getItemMeta();
+        assert im != null;
+        im.setDisplayName(ChatColor.ITALIC + "所有种类的木板");
+        PLKS.setItemMeta(im);
+    }
+    public static final ItemStack BONE = new ItemStack(Material.BONE);
+    public static final ItemStack FLINT = new ItemStack(Material.FLINT);
+    public static final ItemStack PAPER = new ItemStack(Material.PAPER);
+    public static final ItemStack OBSIDIAN = new ItemStack(Material.OBSIDIAN);
+    public static final ItemStack POWDER = new ItemStack(Material.BLAZE_POWDER);
+    /*
+    *
+    *
+    * ==================分割线=====================
+    *
+    *
+     */
     public static String rcp = "Detailed Recipe Page";
     public static String pg1T = "UHCRecipes Page 1";
     public static String pg2T = "UHCRecipes Page 2";

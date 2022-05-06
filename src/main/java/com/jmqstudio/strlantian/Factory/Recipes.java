@@ -123,40 +123,37 @@ public final class Recipes
         Bukkit.addRecipe(appShieldrc);
 
         vpSworc.shape(" a ", " b ", " c ");
-        vpSworc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.BONE, Material.BONE_BLOCK));
+        vpSworc.setIngredient('a', Material.BONE);
         vpSworc.setIngredient('b', Material.IRON_SWORD);
         vpSworc.setIngredient('c', Material.ROTTEN_FLESH);
         Bukkit.addRecipe(vpSworc);
 
-        sharpBrc.shape("ab ", "bcc", " cd");
+        sharpBrc.shape("a  ", " cc", " cd");
         sharpBrc.setIngredient('a', Material.FLINT);
-        sharpBrc.setIngredient('b', Material.IRON_INGOT);
         sharpBrc.setIngredient('c', Material.PAPER);
         sharpBrc.setIngredient('d', Material.IRON_SWORD);
         Bukkit.addRecipe(sharpBrc);
 
-        powBrc.shape("ab ", "bcc", " cd");
+        powBrc.shape("a  ", " cc", " cd");
         powBrc.setIngredient('a', Material.FLINT);
-        powBrc.setIngredient('b', Material.ARROW);
         powBrc.setIngredient('c', Material.PAPER);
-        powBrc.setIngredient('d', new RecipeChoice.MaterialChoice(Material.BONE, Material.BONE_BLOCK));
+        powBrc.setIngredient('d', Material.BONE);
         Bukkit.addRecipe(powBrc);
 
-        dragSworc.shape(" a ", " b ", "cbc");
+        dragSworc.shape(" a ", " b ", "cac");
         dragSworc.setIngredient('a', Material.BLAZE_POWDER);
         dragSworc.setIngredient('b', Material.DIAMOND_AXE);
         dragSworc.setIngredient('c', Material.OBSIDIAN);
         Bukkit.addRecipe(dragSworc);
 
-        protBrc.shape("aee", "ecc", "ecd");
-        protBrc.setIngredient('a', Material.IRON_INGOT);
+        protBrc.shape("a  ", " cc", " cd");
+        protBrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.IRON_INGOT, Material.COPPER_BLOCK));
         protBrc.setIngredient('c', Material.PAPER);
         protBrc.setIngredient('d', Material.IRON_INGOT);
-        protBrc.setIngredient('e', Material.COPPER_INGOT);
         Bukkit.addRecipe(protBrc);
 
         projBrc.shape("a  ", " bb", " bc");
-        projBrc.setIngredient('a', Material.IRON_INGOT);
+        projBrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.IRON_INGOT, Material.COPPER_BLOCK));
         projBrc.setIngredient('b', Material.PAPER);
         projBrc.setIngredient('c', Material.ARROW);
         Bukkit.addRecipe(projBrc);
@@ -598,7 +595,7 @@ public final class Recipes
         stickrc.setIngredient('b', Material.STICK);
     }
 
-    public static void registerRecipes()
+    static
     {
         Bukkit.addRecipe(leapkrc);
         Bukkit.addRecipe(appHelrc);

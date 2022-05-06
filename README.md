@@ -8,7 +8,8 @@ __*Introduction*__
 
 __*Author List*__
 - STRlantian: Main Programmer ~~(im a noob lol)~~
-- JoeMichaelQiao: Main Supporter and the Contributer of 2 recipes
+- JoeMichaelQiao: Main Supporter and the Contributor of 2 recipes
+- Attention: This plugin belongs to JMQStudio on pretense
 
 __*What's More*__
 
@@ -21,6 +22,14 @@ in order not to make "NoSuchMethod" exception occur ~~(which just like wt*)~~
 and then report me bugs and feedbacks. I'm gonna say thx for people doing this.
 
 Well thx for helping or supporting me if you want.
-Here's my donation page: https://afdian.net/@STRlantian
 
-~~Maybe it's the worst plugin in Github lol.~~
+__*Contact Me*__
+
+- In-Game name: STRlantian
+- Discord: STRlantian#5461
+- Bilibili: https://space.bilibili.com/356775820 || 这里是陌蓝qwq
+- Donation: https://afdian.net/@STRlantian || STRlantian
+- Github: https://github.com/Strlantian || STRlantian
+- email: m1606977882@outlook.com || STRlantian
+
+~~Maybe it's the worst plugin on Github lol.~~

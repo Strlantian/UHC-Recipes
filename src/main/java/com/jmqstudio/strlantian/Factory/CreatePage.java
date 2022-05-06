@@ -7,23 +7,26 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.Objects;
+
 import static com.jmqstudio.strlantian.Factory.Ref.*;
 
 public final class CreatePage
 {
-    private static final Inventory recipePage = Bukkit.createInventory(null, 6 * 9, rcp);
     private static final ItemStack g = new ItemStack(Material.GRAY_STAINED_GLASS, 1);
     static
     {
         ItemMeta im = g.getItemMeta();
+        assert im != null;
         im.setDisplayName(ChatColor.GRAY + "*");
         g.setItemMeta(im);
     }
-    private static final ItemStack air = new ItemStack(Material.AIR, 1);
 
     public static Inventory createViewPage(String title)
     {
-        Inventory viewPage = Bukkit.createInventory(null, 6 * 9, title);
+        final Inventory viewPage = Bukkit.createInventory(null, 6 * 9, title);
         viewPage.setItem(0, g);
         viewPage.setItem(1, g);
         viewPage.setItem(2, g);
@@ -62,8 +65,19 @@ public final class CreatePage
         viewPage.setItem(53, g);
         return viewPage;
     }
-    public static Inventory createRecipePage(ItemStack result)
+    public static Inventory createRecipePage(@Nonnull ItemStack result,
+                                             @Nullable ItemStack slot1,
+                                             @Nullable ItemStack slot2,
+                                             @Nullable ItemStack slot3,
+                                             @Nullable ItemStack slot4,
+                                             @Nullable ItemStack slot5,
+                                             @Nullable ItemStack slot6,
+                                             @Nullable ItemStack slot7,
+                                             @Nullable ItemStack slot8,
+                                             @Nullable ItemStack slot9)
     {
+        String name = Objects.requireNonNull(result.getItemMeta()).getDisplayName();
+        final Inventory recipePage = Bukkit.createInventory(null, 6 * 9, rcp + ": " + name);
         recipePage.setItem(0, g);
         recipePage.setItem(1, g);
         recipePage.setItem(2, g);
@@ -77,7 +91,9 @@ public final class CreatePage
         recipePage.setItem(10, g);
         recipePage.setItem(11, g);
 
-
+        recipePage.setItem(12, slot1);
+        recipePage.setItem(13, slot2);
+        recipePage.setItem(14, slot3);
 
         recipePage.setItem(15, g);
         recipePage.setItem(16, g);
@@ -86,7 +102,9 @@ public final class CreatePage
         recipePage.setItem(19, g);
         recipePage.setItem(20, g);
 
-
+        recipePage.setItem(21, slot4);
+        recipePage.setItem(22, slot5);
+        recipePage.setItem(23, slot6);
 
         recipePage.setItem(24, g);
         recipePage.setItem(25, g);
@@ -95,7 +113,9 @@ public final class CreatePage
         recipePage.setItem(28, g);
         recipePage.setItem(29, g);
 
-
+        recipePage.setItem(30, slot7);
+        recipePage.setItem(31, slot8);
+        recipePage.setItem(32, slot9);
 
         recipePage.setItem(33, g);
         recipePage.setItem(34, g);
@@ -119,18 +139,5 @@ public final class CreatePage
         recipePage.setItem(52, g);
         recipePage.setItem(53, g);
         return recipePage;
-    }
-    public static void cleanRecipePage()
-    {
-        recipePage.setItem(12 ,air);
-        recipePage.setItem(13 ,air);
-        recipePage.setItem(14, air);
-        recipePage.setItem(21 ,air);
-        recipePage.setItem(22 ,air);
-        recipePage.setItem(23 ,air);
-        recipePage.setItem(30 ,air);
-        recipePage.setItem(31 ,air);
-        recipePage.setItem(32 ,air);
-        recipePage.setItem(40, air);
     }
 }
