@@ -1,7 +1,6 @@
 package com.jmqstudio.strlantian.Factory;
 
 import com.jmqstudio.strlantian.Main;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.*;
@@ -103,67 +102,56 @@ public final class Recipes
         appHelrc.shape("aaa", "aba", "   ");
         appHelrc.setIngredient('a', Material.IRON_INGOT);
         appHelrc.setIngredient('b', Material.REDSTONE_TORCH);
-        Bukkit.addRecipe(appHelrc);
 
         appSworc.shape(" a ", " b ", " a ");
         appSworc.setIngredient('a', Material.REDSTONE_BLOCK);
         appSworc.setIngredient('b', Material.IRON_SWORD);
-        Bukkit.addRecipe(appSworc);
 
         appBowrc.shape(" ab", "a b", " ab");
         appBowrc.setIngredient('a', Material.REDSTONE_TORCH);
         appBowrc.setIngredient('b', Material.STRING);
-        Bukkit.addRecipe(appBowrc);
 
         appShieldrc.shape("aba", "aca", "dad");
         appShieldrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.OAK_PLANKS, Material.BIRCH_PLANKS, Material.ACACIA_PLANKS, Material.DARK_OAK_PLANKS, Material.CRIMSON_PLANKS, Material.JUNGLE_PLANKS, Material.SPRUCE_PLANKS, Material.WARPED_PLANKS));
         appShieldrc.setIngredient('b', Material.IRON_INGOT);
         appShieldrc.setIngredient('c', Material.REDSTONE_BLOCK);
         appShieldrc.setIngredient('d', Material.REDSTONE_TORCH);
-        Bukkit.addRecipe(appShieldrc);
 
         vpSworc.shape(" a ", " b ", " c ");
         vpSworc.setIngredient('a', Material.BONE);
         vpSworc.setIngredient('b', Material.IRON_SWORD);
         vpSworc.setIngredient('c', Material.ROTTEN_FLESH);
-        Bukkit.addRecipe(vpSworc);
 
         sharpBrc.shape("a  ", " cc", " cd");
         sharpBrc.setIngredient('a', Material.FLINT);
         sharpBrc.setIngredient('c', Material.PAPER);
         sharpBrc.setIngredient('d', Material.IRON_SWORD);
-        Bukkit.addRecipe(sharpBrc);
 
         powBrc.shape("a  ", " cc", " cd");
         powBrc.setIngredient('a', Material.FLINT);
         powBrc.setIngredient('c', Material.PAPER);
         powBrc.setIngredient('d', Material.BONE);
-        Bukkit.addRecipe(powBrc);
 
         dragSworc.shape(" a ", " b ", "cac");
         dragSworc.setIngredient('a', Material.BLAZE_POWDER);
         dragSworc.setIngredient('b', Material.DIAMOND_AXE);
         dragSworc.setIngredient('c', Material.OBSIDIAN);
-        Bukkit.addRecipe(dragSworc);
 
         protBrc.shape("a  ", " cc", " cd");
         protBrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.IRON_INGOT, Material.COPPER_BLOCK));
         protBrc.setIngredient('c', Material.PAPER);
         protBrc.setIngredient('d', Material.IRON_INGOT);
-        Bukkit.addRecipe(protBrc);
 
         projBrc.shape("a  ", " bb", " bc");
         projBrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.IRON_INGOT, Material.COPPER_BLOCK));
         projBrc.setIngredient('b', Material.PAPER);
         projBrc.setIngredient('c', Material.ARROW);
-        Bukkit.addRecipe(projBrc);
 
         dragCherc.shape(" a ", " b ", "cdc");
         dragCherc.setIngredient('a', Material.MAGMA_CREAM);
         dragCherc.setIngredient('b', Material.DIAMOND_CHESTPLATE);
         dragCherc.setIngredient('c', Material.OBSIDIAN);
         dragCherc.setIngredient('d', new RecipeChoice.MaterialChoice(Material.ANVIL, Material.CHIPPED_ANVIL, Material.DAMAGED_ANVIL));
-        Bukkit.addRecipe(dragCherc);
 
         dustrc.shape("ace", "dbd", "eca");
         dustrc.setIngredient('a', Material.REDSTONE);
@@ -171,185 +159,153 @@ public final class Recipes
         dustrc.setIngredient('c', Material.SUGAR);
         dustrc.setIngredient('d', Material.CLAY_BALL);
         dustrc.setIngredient('e', Material.BONE_MEAL);
-        Bukkit.addRecipe(dustrc);
 
         wartrc.shape("aba", "aca", "bab");
         wartrc.setIngredient('a', Material.BEETROOT_SEEDS);
         wartrc.setIngredient('b', Material.WHEAT_SEEDS);
         wartrc.setIngredient('c', Material.FERMENTED_SPIDER_EYE);
-        Bukkit.addRecipe(wartrc);
 
         necrc.shape(" a ", "bcb", " d ");
         necrc.setIngredient('a', Material.EMERALD);
         necrc.setIngredient('b', Material.GOLD_INGOT);
         necrc.setIngredient('c', Material.MELON_SLICE);
         necrc.setIngredient('d', Material.GLASS_BOTTLE);
-        Bukkit.addRecipe(necrc);
 
         netArtrc.shape("aba", "aca", "aba");
         netArtrc.setIngredient('a', Material.ORANGE_STAINED_GLASS);
         netArtrc.setIngredient('b', Material.LAVA_BUCKET);
         netArtrc.setIngredient('c', Material.FIREWORK_ROCKET);
-        Bukkit.addRecipe(netArtrc);
 
         steakrc.shape("aaa", "aba", "aaa");
         steakrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.BEEF, Material.MUTTON, Material.ROTTEN_FLESH, Material.CHICKEN, Material.PORKCHOP, Material.RABBIT, Material.RABBIT_FOOT));
         steakrc.setIngredient('b', new RecipeChoice.MaterialChoice(Material.COAL, Material.CHARCOAL));
-        Bukkit.addRecipe(steakrc);
 
         tourc.shape(" a ", " b ", " c ");
         tourc.setIngredient('a', Material.SLIME_BALL);
         tourc.setIngredient('b', new RecipeChoice.MaterialChoice(Material.WHITE_WOOL, Material.BLACK_WOOL, Material.BLUE_WOOL, Material.BROWN_WOOL, Material.CYAN_WOOL, Material.GRAY_WOOL, Material.GREEN_WOOL, Material.LIGHT_BLUE_WOOL, Material.LIGHT_GRAY_WOOL, Material.LIME_WOOL, Material.MAGENTA_WOOL, Material.ORANGE_WOOL, Material.PINK_WOOL, Material.PURPLE_WOOL, Material.RED_WOOL, Material.YELLOW_WOOL));
         tourc.setIngredient('c', Material.GLASS_BOTTLE);
-        Bukkit.addRecipe(tourc);
 
         spkCherc.shape(" a ", " b ", " c ");
         spkCherc.setIngredient('a', Material.LILY_PAD);
         spkCherc.setIngredient('b', Material.CACTUS);
         spkCherc.setIngredient('c', Material.LEATHER_CHESTPLATE);
-        Bukkit.addRecipe(spkCherc);
 
         sevBotrc.shape("aba", "aca", "ada");
         sevBotrc.setIngredient('a', Material.FEATHER);
         sevBotrc.setIngredient('b', Material.ENDER_PEARL);
         sevBotrc.setIngredient('c', Material.DIAMOND_BOOTS);
         sevBotrc.setIngredient('d', Material.WATER_BUCKET);
-        Bukkit.addRecipe(sevBotrc);
 
         ipkrc.shape("aaa", "aba", "aaa");
         ipkrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.RAW_IRON, Material.IRON_ORE));
         ipkrc.setIngredient('b', Material.COAL);
-        Bukkit.addRecipe(ipkrc);
 
         obsrc.addIngredient(Material.WATER_BUCKET);
         obsrc.addIngredient(Material.LAVA_BUCKET);
         obsrc.addIngredient(Material.COAL_BLOCK);
-        Bukkit.addRecipe(obsrc);
 
         tarnrc.shape("aba", "aca", "   ");
         tarnrc.setIngredient('a', Material.DIAMOND);
         tarnrc.setIngredient('b', Material.IRON_INGOT);
         tarnrc.setIngredient('c', Material.REDSTONE_BLOCK);
-        Bukkit.addRecipe(tarnrc);
 
         fortPicrc.shape("aba", "cdc", " d ");
         fortPicrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.RAW_IRON, Material.IRON_ORE));
         fortPicrc.setIngredient('b', new RecipeChoice.MaterialChoice(Material.RAW_GOLD, Material.GOLD_ORE));
         fortPicrc.setIngredient('c', Material.LAPIS_BLOCK);
         fortPicrc.setIngredient('d', Material.STICK);
-        Bukkit.addRecipe(fortPicrc);
 
         exprc.shape("aaa", "aba", "aaa");
         exprc.setIngredient('a', Material.REDSTONE_BLOCK);
         exprc.setIngredient('b', Material.GLASS_BOTTLE);
-        Bukkit.addRecipe(exprc);
 
         ltAnvrc.shape("aaa", " b ", "aaa");
         ltAnvrc.setIngredient('a', Material.IRON_INGOT);
         ltAnvrc.setIngredient('b', Material.IRON_BLOCK);
-        Bukkit.addRecipe(ltAnvrc);
 
         ltEncrc.shape(" a ", "bcb", "bdb");
         ltEncrc.setIngredient('a', Material.BOOKSHELF);
         ltEncrc.setIngredient('b', Material.OBSIDIAN);
         ltEncrc.setIngredient('c', Material.DIAMOND);
         ltEncrc.setIngredient('d', Material.EXPERIENCE_BOTTLE);
-        Bukkit.addRecipe(ltEncrc);
 
         thoBrc.shape("a  ", " bb", " bc");
         thoBrc.setIngredient('a', Material.ENDER_EYE);
         thoBrc.setIngredient('b', Material.PAPER);
         thoBrc.setIngredient('c', Material.FIRE_CHARGE);
-        Bukkit.addRecipe(thoBrc);
 
         wisArc.addIngredient(Material.APPLE);
         wisArc.addIngredient(Material.BONE_MEAL);
         wisArc.addIngredient(Material.BONE_MEAL);
         wisArc.addIngredient(Material.BONE_MEAL);
         wisArc.addIngredient(Material.BONE_MEAL);
-        Bukkit.addRecipe(wisArc);
 
         melonrc.shape("aba", "bcb", "aba");
         melonrc.setIngredient('a', Material.BONE_MEAL);
         melonrc.setIngredient('b', new RecipeChoice.MaterialChoice(Material.BEETROOT_SEEDS, Material.WHEAT_SEEDS, Material.MELON_SEEDS, Material.PUMPKIN_SEEDS));
         melonrc.setIngredient('c', Material.APPLE);
-        Bukkit.addRecipe(melonrc);
 
         aspPtrc.shape("aba", " c ", " d ");
         aspPtrc.setIngredient('a', Material.GOLD_INGOT);
         aspPtrc.setIngredient('b', Material.REDSTONE_BLOCK);
         aspPtrc.setIngredient('c', new RecipeChoice.MaterialChoice(Material.MUSIC_DISC_13, Material.MUSIC_DISC_11, Material.MUSIC_DISC_CAT, Material.MUSIC_DISC_BLOCKS, Material.MUSIC_DISC_CHIRP, Material.MUSIC_DISC_FAR, Material.MUSIC_DISC_MALL, Material.MUSIC_DISC_MELLOHI, Material.MUSIC_DISC_PIGSTEP, Material.MUSIC_DISC_STAL, Material.MUSIC_DISC_STRAD, Material.MUSIC_DISC_WAIT, Material.MUSIC_DISC_WARD));
         aspPtrc.setIngredient('d', Material.GLASS_BOTTLE);
-        Bukkit.addRecipe(aspPtrc);
 
         gApplerc.shape(" a ", "aba", " a ");
         gApplerc.setIngredient('a', Material.GOLD_INGOT);
         gApplerc.setIngredient('b', Material.APPLE);
-        Bukkit.addRecipe(gApplerc);
 
         hdrc.shape("aaa", "aba", "aaa");
         hdrc.setIngredient('a', Material.GOLD_INGOT);
         hdrc.setIngredient('b', new RecipeChoice.MaterialChoice(Material.WITHER_SKELETON_SKULL, Material.PLAYER_HEAD));
-        Bukkit.addRecipe(hdrc);
 
         pBoxrc.shape("aaa", "aba", "aaa");
         pBoxrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.CHEST, Material.ENDER_CHEST, Material.TRAPPED_CHEST));
         pBoxrc.setIngredient('b', new RecipeChoice.MaterialChoice(Material.WITHER_SKELETON_SKULL, Material.PLAYER_HEAD));
-        Bukkit.addRecipe(pBoxrc);
 
         panPrc.shape("aba", " c ", "   ");
         panPrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.WITHER_SKELETON_SKULL, Material.PLAYER_HEAD));
         panPrc.setIngredient('b', Material.GLISTERING_MELON_SLICE);
         panPrc.setIngredient('c', Material.GLASS_BOTTLE);
-        Bukkit.addRecipe(panPrc);
 
         cBowrc.shape(" a ", "bcb", " d ");
         cBowrc.setIngredient('a', Material.BLAZE_ROD);
         cBowrc.setIngredient('b', new RecipeChoice.MaterialChoice(Material.WITHER_SKELETON_SKULL, Material.PLAYER_HEAD));
         cBowrc.setIngredient('c', Material.BOW);
         cBowrc.setIngredient('d', Material.LAVA_BUCKET);
-        Bukkit.addRecipe(cBowrc);
 
         arrowrc.shape("aaa", "bbb", "ccc");
         arrowrc.setIngredient('a', Material.FLINT);
         arrowrc.setIngredient('b', Material.STICK);
         arrowrc.setIngredient('c', Material.FEATHER);
-        Bukkit.addRecipe(arrowrc);
 
         sadrc.shape("aaa", "bab", "c c");
         sadrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.LEATHER, Material.RABBIT_HIDE));
         sadrc.setIngredient('b', Material.STRING);
         sadrc.setIngredient('c', new RecipeChoice.MaterialChoice(Material.IRON_INGOT, Material.COPPER_INGOT));
-        Bukkit.addRecipe(sadrc);
 
         velPtrc.addIngredient(Material.COCOA_BEANS);
         velPtrc.addIngredient(Material.SUGAR);
         velPtrc.addIngredient(Material.GLASS_BOTTLE);
-        Bukkit.addRecipe(velPtrc);
 
         ferrc.shape("aaa", "bcb", "aaa");
         ferrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.LEATHER, Material.RABBIT_HIDE));
         ferrc.setIngredient('b', new RecipeChoice.MaterialChoice(Material.BONE, Material.BONE_BLOCK));
         ferrc.setIngredient('c', Material.EXPERIENCE_BOTTLE);
-        Bukkit.addRecipe(ferrc);
-
 
         forgerc.shape("aaa", "aba", "aaa");
         forgerc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.COBBLESTONE, Material.COBBLED_DEEPSLATE, Material.BLACKSTONE, Material.STONE, Material.END_STONE));
         forgerc.setIngredient('b', Material.COAL_BLOCK);
-        Bukkit.addRecipe(forgerc);
 
         qkPicrc.shape("aaa", "bcb", " c ");
         qkPicrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.RAW_IRON, Material.IRON_ORE));
         qkPicrc.setIngredient('b', Material.COAL);
         qkPicrc.setIngredient('c', Material.STICK);
-        Bukkit.addRecipe(qkPicrc);
 
         lumrc.shape("aab", "ac ", " c ");
         lumrc.setIngredient('a', Material.IRON_INGOT);
         lumrc.setIngredient('b', Material.FLINT);
         lumrc.setIngredient('c', Material.STICK);
-        Bukkit.addRecipe(lumrc);
 
         eBookrc.shape("aaa", "bcd", "eee");
         eBookrc.setIngredient('a', Material.EXPERIENCE_BOTTLE);
@@ -357,24 +313,20 @@ public final class Recipes
         eBookrc.setIngredient('c', Material.ENCHANTING_TABLE);
         eBookrc.setIngredient('d', Material.IRON_AXE);
         eBookrc.setIngredient('e', Material.BOOKSHELF);
-        Bukkit.addRecipe(eBookrc);
 
         gpkrc.shape("aaa", "aba", "aaa");
         gpkrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.RAW_GOLD, Material.GOLD_ORE));
         gpkrc.setIngredient('b', Material.COAL);
-        Bukkit.addRecipe(gpkrc);
 
         sugrc.addIngredient(new RecipeChoice.MaterialChoice(Material.ACACIA_SAPLING, Material.BIRCH_SAPLING, Material.OAK_SAPLING, Material.DARK_OAK_SAPLING, Material.JUNGLE_SAPLING, Material.SPRUCE_SAPLING));
         sugrc.addIngredient(new RecipeChoice.MaterialChoice(Material.BEETROOT_SEEDS, Material.WHEAT_SEEDS, Material.MELON_SEEDS, Material.PUMPKIN_SEEDS));
         sugrc.addIngredient(new RecipeChoice.MaterialChoice(Material.BEETROOT_SEEDS, Material.WHEAT_SEEDS, Material.MELON_SEEDS, Material.PUMPKIN_SEEDS));
         sugrc.addIngredient(Material.SUGAR);
-        Bukkit.addRecipe(sugrc);
 
         chestrc.shape("aba", "aca", "aba");
         chestrc.setIngredient('a', new RecipeChoice.MaterialChoice(Material.OAK_PLANKS, Material.BIRCH_PLANKS, Material.ACACIA_PLANKS, Material.DARK_OAK_PLANKS, Material.CRIMSON_PLANKS, Material.JUNGLE_PLANKS, Material.SPRUCE_PLANKS, Material.WARPED_PLANKS));
         chestrc.setIngredient('b', new RecipeChoice.MaterialChoice(Material.LEATHER, Material.RABBIT_HIDE));
         chestrc.setIngredient('c', new RecipeChoice.MaterialChoice(Material.CHEST, Material.ENDER_CHEST, Material.TRAPPED_CHEST));
-        Bukkit.addRecipe(chestrc);
 
         fsrc.addIngredient(new RecipeChoice.MaterialChoice(Material.DIAMOND_CHESTPLATE, Material.DIAMOND_LEGGINGS, Material.DIAMOND_BOOTS, Material.DIAMOND_HELMET));
         fsrc.addIngredient(new RecipeChoice.MaterialChoice(Material.DIAMOND_CHESTPLATE, Material.DIAMOND_LEGGINGS, Material.DIAMOND_BOOTS, Material.DIAMOND_HELMET));
