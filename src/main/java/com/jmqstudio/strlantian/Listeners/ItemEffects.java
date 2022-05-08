@@ -20,6 +20,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 import static com.jmqstudio.strlantian.Factory.Items.and;
+import static com.jmqstudio.strlantian.Factory.Items.ht;
 import static com.jmqstudio.strlantian.Factory.Recipes.*;
 
 public final class ItemEffects implements Listener
@@ -50,7 +51,7 @@ public final class ItemEffects implements Listener
     }
 
     @EventHandler
-    public void holdItem(PlayerItemHeldEvent e)
+    public void holdItems(PlayerItemHeldEvent e)
     {
         Player pl = e.getPlayer();
         ItemStack mItem = Objects.requireNonNull(pl.getEquipment()).getItemInMainHand();
@@ -65,19 +66,33 @@ public final class ItemEffects implements Listener
     }
 
     @EventHandler
+    public void apprenticeAssets(CraftItemEvent e)
+    {
+        Player pl = (Player) e.getWhoClicked();
+        Recipe recipe = e.getRecipe();
+        ItemStack result = e.getCurrentItem();
+
+        if(recipe.equals(appSworc))
+        {
+
+        }
+    }
+    @EventHandler
     public void compassAssets(CraftItemEvent e)
     {
         Player user = (Player) e.getWhoClicked();
         Recipe recipe = e.getRecipe();
         int num = Bukkit.getOnlinePlayers().size();
-        if(num <= 1)
+
+        if(recipe.equals(htrc))
         {
-            user.sendMessage(ChatColor.RED + "请让服务器先有至少两个人吧!");
-            e.setCancelled(true);
-        }
-        else
-        {
-            if(recipe.equals(htrc))
+            if(num <= 1)
+            {
+                user.sendMessage(ChatColor.RED + "目前还不能合成这玩意");
+                user.sendMessage(ChatColor.RED + "请让服务器先有至少两个人吧!");
+                e.setCancelled(true);
+            }
+            else
             {
                 Player target = Bukkit.getPlayer("");
                 while(Objects.equals(target, user))
@@ -98,8 +113,17 @@ public final class ItemEffects implements Listener
                     Location loc = target.getLocation();
                     im.setLodestone(loc);
                     compass.setItemMeta(im);
-                    if(!user.isDead() || !target.isDead())
+                    if(user.isDead() || target.isDead())
                     {
+                        user.getInventory().remove(ht);
+                        if(user.isDead())
+                        {
+                            user.sendMessage(ChatColor.RED + "你失去了你的猎人罗盘");
+                        }
+                        if(target.isDead())
+                        {
+                            user.sendMessage(ChatColor.GREEN + "目标死亡, 你的猎人罗盘已销毁");
+                        }
                         break;
                     }
                 }

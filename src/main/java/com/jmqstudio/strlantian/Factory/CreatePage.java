@@ -15,7 +15,7 @@ import static com.jmqstudio.strlantian.Factory.Ref.*;
 
 public final class CreatePage
 {
-    private static final ItemStack g = new ItemStack(Material.GRAY_STAINED_GLASS, 1);
+    private static final ItemStack g = new ItemStack(Material.LIGHT_GRAY_STAINED_GLASS_PANE, 1);
     static
     {
         ItemMeta im = g.getItemMeta();

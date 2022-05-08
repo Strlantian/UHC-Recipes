@@ -10,8 +10,9 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.SkullMeta;
 
-import java.util.Objects;
+import java.util.Arrays;
 
 public final class AboutPlayers implements Listener
 {
@@ -24,12 +25,26 @@ public final class AboutPlayers implements Listener
         pl.sendMessage(ChatColor.GRAY + "作者求求了你们快看吧有配方改了啊啊啊啊啊");
     }
     @EventHandler
-    public void onDie(PlayerDeathEvent e)
+    public void headAssets(PlayerDeathEvent e)
     {
         Player pl = e.getEntity();
-        Entity killer = Objects.requireNonNull(pl.getKiller());
-        ItemStack head = Items.makeHead(pl, killer);
         Inventory inv = pl.getInventory();
+        ItemStack head = Items.makeHead(pl);
+        try
+        {
+            Entity killer = pl.getKiller();
+            assert killer != null;
+            String kname = killer.getName();
+            SkullMeta im = (SkullMeta) head.getItemMeta();
+            assert im != null;
+            im.setLore(Arrays.asList("", ChatColor.GREEN + "击杀者: " + kname));
+            head.setItemMeta(im);
+        }
+        catch(Exception exc)
+        {
+            exc.printStackTrace();
+            System.out.println(ChatColor.GREEN + "这不是个错误, 这是指玩家头颅没有击杀者");
+        }
         inv.addItem(head);
     }
 }

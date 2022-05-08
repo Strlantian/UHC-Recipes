@@ -4,7 +4,6 @@ import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemFlag;
@@ -632,16 +631,14 @@ public final class Items
         stick.setItemMeta(stickim);
     }
 
-    public static ItemStack makeHead(@Nonnull Player who, Entity killer)
+    public static ItemStack makeHead(@Nonnull Player who)
     {
         ItemStack head = new ItemStack(Material.PLAYER_HEAD);
         SkullMeta im = (SkullMeta) head.getItemMeta();
         String name = who.getName();
-        String kname = killer.getName();
         assert im != null;
         im.setOwnerProfile(who.getPlayerProfile());
         im.setDisplayName(ChatColor.YELLOW + name + "的头颅");
-        im.setLore(Arrays.asList("", ChatColor.GREEN + "击杀者: " + kname, ""));
         head.setItemMeta(im);
         return head;
     }

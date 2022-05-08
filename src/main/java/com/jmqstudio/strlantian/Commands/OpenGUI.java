@@ -5,6 +5,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
 import javax.annotation.Nonnull;
@@ -14,8 +15,13 @@ import static com.jmqstudio.strlantian.Factory.GUI.*;
 public final class OpenGUI implements CommandExecutor
 {
     @Override
-    public boolean onCommand(CommandSender sd, @Nonnull Command cmd, @Nonnull String label, String[] s)
+    public boolean onCommand(@Nonnull CommandSender sd, @Nonnull Command cmd, @Nonnull String label,@Nonnull String[] s)
     {
+        if(!(sd instanceof Entity))
+        {
+            System.out.println(ChatColor.RED + "你控制台凑什么热闹-_-");
+            return true;
+        }
         Player pl = Bukkit.getPlayer(sd.getName());
         assert pl != null;
         if(s.length == 0)
