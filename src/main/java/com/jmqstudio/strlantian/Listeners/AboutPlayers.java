@@ -1,6 +1,8 @@
 package com.jmqstudio.strlantian.Listeners;
 
 import com.jmqstudio.strlantian.Factory.Items;
+import com.jmqstudio.strlantian.Orientation.CreateBar;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -11,8 +13,13 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
+import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scoreboard.Scoreboard;
 
 import java.util.Arrays;
+import java.util.Objects;
+
+import static com.jmqstudio.strlantian.Main.inst;
 
 public final class AboutPlayers implements Listener
 {
@@ -23,6 +30,21 @@ public final class AboutPlayers implements Listener
         pl.sendMessage(ChatColor.GRAY + "UHCRecipes插件已安装!");
         pl.sendMessage(ChatColor.GRAY + "请用/uhchelp来查看该插件的帮助");
         pl.sendMessage(ChatColor.GRAY + "作者求求了你们快看吧有配方改了啊啊啊啊啊");
+        Scoreboard showHealth = Objects.requireNonNull(Bukkit.getScoreboardManager()).getNewScoreboard();
+        Scoreboard tabHealth = Objects.requireNonNull(Bukkit.getScoreboardManager().getNewScoreboard());
+
+        new BukkitRunnable()
+        {
+            @Override
+            public void run()
+            {
+                while(pl.isOnline())
+                {
+                    pl.setScoreboard(CreateBar.getHealthBar(pl, showHealth));
+                    pl.setScoreboard(CreateBar.getTabHealth(pl, tabHealth));
+                }
+            }
+        }.runTask(inst);
     }
     @EventHandler
     public void headAssets(PlayerDeathEvent e)

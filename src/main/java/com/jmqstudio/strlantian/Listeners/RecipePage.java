@@ -1,6 +1,6 @@
 package com.jmqstudio.strlantian.Listeners;
 
-import com.jmqstudio.strlantian.Factory.CreatePage;
+import com.jmqstudio.strlantian.Orientation.CreatePage;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -25,10 +25,10 @@ public final class RecipePage implements Listener
         Player pl = (Player) e.getWhoClicked();
         InventoryView inv = pl.getOpenInventory();
         String title = inv.getTitle();
-        if(title.equals(pg1T) ||
-                title.equals(pg2T) ||
-                title.equals(pg3T) ||
-                title.equals(pg4T))
+        if(title.equals(PG1T) ||
+                title.equals(PG2T) ||
+                title.equals(PG3T) ||
+                title.equals(PG4T))
         {
             if(Objects.equals(item, appHel))
             {

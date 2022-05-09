@@ -43,44 +43,44 @@ public final class Ref
     *
     *
      */
-    public static String rcp = "Detailed Recipe Page";
-    public static String pg1T = "UHCRecipes Page 1";
-    public static String pg2T = "UHCRecipes Page 2";
-    public static String pg3T = "UHCRecipes Page 3";
-    public static String pg4T = "UHCRecipes Page 4";
-
-    public static ItemStack close = new ItemStack(Material.BARRIER);
-    public static ItemStack ref1 = new ItemStack(Material.LIGHT_BLUE_STAINED_GLASS);
-    public static ItemStack ref2 = new ItemStack(Material.LIGHT_BLUE_STAINED_GLASS);
-    public static ItemStack ref3 = new ItemStack(Material.LIGHT_BLUE_STAINED_GLASS);
-    public static ItemStack ref4 = new ItemStack(Material.LIGHT_BLUE_STAINED_GLASS);
+    public static final String RCP = "UHC配方详细页";
+    public static final String PG1T = "UHC配方总览 - 1";
+    public static final String PG2T = "UHC配方总览 - 2";
+    public static final String PG3T = "UHC配方总览 - 3";
+    public static final String PG4T = "UHC配方总览 - 4";
+    public static final String WHYRUCON = ChatColor.RED + "你控制台凑什么热闹-_-";
+    public static final ItemStack CLOSE = new ItemStack(Material.BARRIER);
+    public static final ItemStack REF1 = new ItemStack(Material.LIGHT_BLUE_WOOL);
+    public static final ItemStack REF2 = new ItemStack(Material.LIGHT_BLUE_WOOL);
+    public static final ItemStack REF3 = new ItemStack(Material.LIGHT_BLUE_WOOL);
+    public static final ItemStack REF4 = new ItemStack(Material.LIGHT_BLUE_WOOL);
 
     static
     {
-        ItemMeta clsim = close.getItemMeta();
-        ItemMeta im1 = ref1.getItemMeta();
-        ItemMeta im2 = ref2.getItemMeta();
-        ItemMeta im3 = ref3.getItemMeta();
-        ItemMeta im4 = ref4.getItemMeta();
+        ItemMeta clsim = CLOSE.getItemMeta();
+        ItemMeta im1 = REF1.getItemMeta();
+        ItemMeta im2 = REF2.getItemMeta();
+        ItemMeta im3 = REF3.getItemMeta();
+        ItemMeta im4 = REF4.getItemMeta();
 
         assert clsim != null;
-        clsim.setDisplayName(ChatColor.RED + "Close This Page");
+        clsim.setDisplayName(ChatColor.RED + "关闭此页面");
         clsim.addEnchant(Enchantment.DURABILITY, 1, true);
         clsim.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 
         assert im1 != null;
-        im1.setDisplayName("Page 1");
+        im1.setDisplayName("跳转至第1页");
         assert im2 != null;
-        im2.setDisplayName("Page 2");
+        im2.setDisplayName("跳转至第2页");
         assert im3 != null;
-        im3.setDisplayName("Page 3");
+        im3.setDisplayName("跳转至第3页");
         assert im4 != null;
-        im4.setDisplayName("Page 4");
+        im4.setDisplayName("跳转至第4页");
 
-        close.setItemMeta(clsim);
-        ref1.setItemMeta(im1);
-        ref2.setItemMeta(im2);
-        ref3.setItemMeta(im3);
-        ref4.setItemMeta(im4);
+        CLOSE.setItemMeta(clsim);
+        REF1.setItemMeta(im1);
+        REF2.setItemMeta(im2);
+        REF3.setItemMeta(im3);
+        REF4.setItemMeta(im4);
     }
 }

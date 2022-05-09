@@ -28,8 +28,12 @@ public final class Main extends JavaPlugin
         Bukkit.getPluginManager().registerEvents(new ItemEffects(), this);
         Bukkit.getPluginManager().registerEvents(new AboutPlayers(), this);
         Bukkit.getPluginManager().registerEvents(new RecipePage(),this);
+
         Objects.requireNonNull(Bukkit.getPluginCommand("uhcrecipes")).setExecutor(new OpenGUI());
         Objects.requireNonNull(Bukkit.getPluginCommand("uhchelp")).setExecutor(new HelpPage());
+
+        Objects.requireNonNull(Bukkit.getPluginCommand("uhcrecipes")).setTabCompleter(new OpenGUI());
+        Objects.requireNonNull(Bukkit.getPluginCommand("uhchelp")).setTabCompleter(new HelpPage());
 
         Bukkit.addRecipe(leapkrc);
         Bukkit.addRecipe(appHelrc);
@@ -106,6 +110,7 @@ public final class Main extends JavaPlugin
         Bukkit.addRecipe(blsrc);
         Bukkit.addRecipe(ambrc);
         Bukkit.addRecipe(lusrc);
+        Bukkit.addRecipe(allrc);
         Bukkit.addRecipe(epsrc);
         Bukkit.addRecipe(spdrc);
         Bukkit.addRecipe(ragerc);

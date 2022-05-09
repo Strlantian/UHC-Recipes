@@ -1,5 +1,6 @@
 package com.jmqstudio.strlantian.Factory;
 
+import com.jmqstudio.strlantian.Orientation.CreatePage;
 import org.bukkit.inventory.Inventory;
 
 import static com.jmqstudio.strlantian.Factory.Items.*;
@@ -7,10 +8,10 @@ import static com.jmqstudio.strlantian.Factory.Ref.*;
 
 public final class GUI
 {
-    public static Inventory pg1 = CreatePage.createViewPage(pg1T);
-    public static Inventory pg2 = CreatePage.createViewPage(pg2T);
-    public static Inventory pg3 = CreatePage.createViewPage(pg3T);
-    public static Inventory pg4 = CreatePage.createViewPage(pg4T);
+    public static Inventory pg1 = CreatePage.createViewPage(PG1T);
+    public static Inventory pg2 = CreatePage.createViewPage(PG2T);
+    public static Inventory pg3 = CreatePage.createViewPage(PG3T);
+    public static Inventory pg4 = CreatePage.createViewPage(PG4T);
     static
     {
         pg1.setItem(10, appHel);

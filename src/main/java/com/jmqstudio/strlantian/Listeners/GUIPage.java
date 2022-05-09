@@ -17,14 +17,14 @@ public final class GUIPage implements Listener
         Player pl = (Player) e.getWhoClicked();
         InventoryView inv = pl.getOpenInventory();
         String title = inv.getTitle();
-        if(title.contains(rcp))
+        if(title.equals(RCP))
         {
             e.setCancelled(true);
         }
-        if(title.equals(pg1T) ||
-                title.equals(pg2T) ||
-                title.equals(pg3T) ||
-                title.equals(pg4T))
+        if(title.equals(PG1T) ||
+                title.equals(PG2T) ||
+                title.equals(PG3T) ||
+                title.equals(PG4T))
         {
             e.setCancelled(true);
             int slot = e.getSlot();

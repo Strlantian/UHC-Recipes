@@ -15,6 +15,7 @@ import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.meta.CompassMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -22,6 +23,7 @@ import java.util.Objects;
 import static com.jmqstudio.strlantian.Factory.Items.and;
 import static com.jmqstudio.strlantian.Factory.Items.ht;
 import static com.jmqstudio.strlantian.Factory.Recipes.*;
+import static com.jmqstudio.strlantian.Main.inst;
 
 public final class ItemEffects implements Listener
 {
@@ -65,69 +67,77 @@ public final class ItemEffects implements Listener
         }
     }
 
+    /*
     @EventHandler
     public void apprenticeAssets(CraftItemEvent e)
     {
         Player pl = (Player) e.getWhoClicked();
         Recipe recipe = e.getRecipe();
         ItemStack result = e.getCurrentItem();
-
         if(recipe.equals(appSworc))
         {
 
         }
     }
+    Still in coding...
+     */
     @EventHandler
     public void compassAssets(CraftItemEvent e)
     {
-        Player user = (Player) e.getWhoClicked();
-        Recipe recipe = e.getRecipe();
-        int num = Bukkit.getOnlinePlayers().size();
-
-        if(recipe.equals(htrc))
+        new BukkitRunnable()
         {
-            if(num <= 1)
+            @Override
+            public void run()
             {
-                user.sendMessage(ChatColor.RED + "目前还不能合成这玩意");
-                user.sendMessage(ChatColor.RED + "请让服务器先有至少两个人吧!");
-                e.setCancelled(true);
-            }
-            else
-            {
-                Player target = Bukkit.getPlayer("");
-                while(Objects.equals(target, user))
+                Player user = (Player) e.getWhoClicked();
+                Recipe recipe = e.getRecipe();
+                int num = Bukkit.getOnlinePlayers().size();
+                if(recipe.equals(htrc))
                 {
-                    target = Bukkit.getPlayer("");
-                    if(!Objects.equals(target, user))
+                    if(num <= 1)
                     {
-                        break;
+                        user.sendMessage(ChatColor.RED + "目前还不能合成这玩意");
+                        user.sendMessage(ChatColor.RED + "请让服务器先有至少两个人吧!");
+                        e.setCancelled(true);
+                    }
+                    else
+                    {
+                        Player target = Bukkit.getPlayer("");
+                        while(Objects.equals(target, user))
+                        {
+                            target = Bukkit.getPlayer("");
+                            if(!Objects.equals(target, user))
+                            {
+                                break;
+                            }
+                        }
+                        ItemStack compass = recipe.getResult();
+                        CompassMeta im = (CompassMeta) compass.getItemMeta();
+                        assert im != null;
+                        assert target != null;
+                        im.setLore(Arrays.asList("", ChatColor.GREEN + "指向: " + target.getName(), ""));
+                        while(!user.isDead() && !target.isDead() && target.isOnline())
+                        {
+                            Location loc = target.getLocation();
+                            im.setLodestone(loc);
+                            compass.setItemMeta(im);
+                            if(user.isDead() || target.isDead())
+                            {
+                                user.getInventory().remove(ht);
+                                if(user.isDead())
+                                {
+                                    user.sendMessage(ChatColor.RED + "你失去了你的猎人罗盘");
+                                }
+                                if(target.isDead())
+                                {
+                                    user.sendMessage(ChatColor.GREEN + "目标死亡, 你的猎人罗盘已销毁");
+                                }
+                                break;
+                            }
+                        }
                     }
                 }
-                ItemStack compass = recipe.getResult();
-                CompassMeta im = (CompassMeta) compass.getItemMeta();
-                assert im != null;
-                assert target != null;
-                im.setLore(Arrays.asList("", ChatColor.GREEN + "指向: " + target.getName(), ""));
-                while(!user.isDead() && !target.isDead() && target.isOnline())
-                {
-                    Location loc = target.getLocation();
-                    im.setLodestone(loc);
-                    compass.setItemMeta(im);
-                    if(user.isDead() || target.isDead())
-                    {
-                        user.getInventory().remove(ht);
-                        if(user.isDead())
-                        {
-                            user.sendMessage(ChatColor.RED + "你失去了你的猎人罗盘");
-                        }
-                        if(target.isDead())
-                        {
-                            user.sendMessage(ChatColor.GREEN + "目标死亡, 你的猎人罗盘已销毁");
-                        }
-                        break;
-                    }
-                }
             }
-        }
+        }.runTask(inst);
     }
 }

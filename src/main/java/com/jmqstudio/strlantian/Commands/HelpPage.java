@@ -2,12 +2,16 @@ package com.jmqstudio.strlantian.Commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabExecutor;
+import org.bukkit.entity.Entity;
 
 import javax.annotation.Nonnull;
+import java.util.List;
 
-public final class HelpPage implements CommandExecutor
+import static com.jmqstudio.strlantian.Factory.Ref.WHYRUCON;
+
+public final class HelpPage implements TabExecutor
 {
     @Override
     public boolean onCommand(@Nonnull CommandSender sd, @Nonnull Command cmd,@Nonnull String label, String[] str)
@@ -30,5 +34,16 @@ public final class HelpPage implements CommandExecutor
             sd.sendMessage(ChatColor.RED + "你能别瞎输入吗");
         }
         return true;
+    }
+
+    @Override
+    public List<String> onTabComplete(@Nonnull CommandSender sd,@Nonnull Command cmd,@Nonnull String label,@Nonnull String[] s)
+    {
+        if(!(sd instanceof Entity))
+        {
+            System.out.println(WHYRUCON);
+            return null;
+        }
+        return null;
     }
 }

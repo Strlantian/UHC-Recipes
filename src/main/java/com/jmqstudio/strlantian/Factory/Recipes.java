@@ -87,6 +87,7 @@ public final class Recipes
     public static ShapedRecipe blsrc = new ShapedRecipe(new NamespacedKey(Main.inst, "Miners_Blessing"), bls);
     public static ShapedRecipe ambrc = new ShapedRecipe(new NamespacedKey(Main.inst, "Ambrosia"), amb);
     public static ShapedRecipe lusrc = new ShapedRecipe(new NamespacedKey(Main.inst, "Bloodlust"), lus);
+    public static ShapedRecipe allrc = new ShapedRecipe(new NamespacedKey(Main.inst, "ComBow"), all);
     public static ShapedRecipe epsrc = new ShapedRecipe(new NamespacedKey(Main.inst, "Expert_Seal"), eps);
     public static ShapedRecipe spdrc = new ShapedRecipe(new NamespacedKey(Main.inst, "Hermes_Boots"), spd);
     public static ShapedRecipe ragerc = new ShapedRecipe(new NamespacedKey(Main.inst, "Barbarian_Chestplate"), rage);
@@ -489,7 +490,6 @@ public final class Recipes
         lusrc.setIngredient('c', Material.DIAMOND_SWORD);
         lusrc.setIngredient('d', Material.EXPERIENCE_BOTTLE);
 
-        ShapedRecipe allrc = new ShapedRecipe(new NamespacedKey(Main.inst, "ComBow"), all);
         allrc.shape(" a ", "bcb", "ded");
         allrc.setIngredient('a', Material.CLOCK);
         allrc.setIngredient('b', Material.BLAZE_POWDER);
